@@ -1,0 +1,133 @@
+
+#bar a
+{
+  transition: 0.5s ease !important;
+}
+
+#bar a:link, #bar a:visited
+{
+  color: black;
+
+   /*padding:8px 40px 8px 40px;*/
+    text-decoration:none;
+    text-transform:uppercase;
+    text-shadow: 6px 6px 15px black;
+    z-index: 100;
+}
+
+.box:first-of-type
+{
+   border-radius: 0px 0 0px 20px;
+   display: none;
+}
+
+#bar a:hover
+{
+  color: rgb(255, 10, 10);;
+   cursor: pointer;
+}
+
+
+
+#bar
+{
+  position: fixed;
+  margin:0;
+  padding:0;
+  width:100%;
+  max-height:60px;
+  background:rgba(255,255, 255, 1);
+  box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.7),3px 10px 15px rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: flex;
+  right: 0px;
+
+}
+
+div #logo
+{
+  max-height:60px;
+   z-index: 100;
+}
+
+#title
+{
+  padding-left: 5px;
+  display: flex;
+  max-height:60px;
+  z-index: 100;
+  justify-content: center;
+
+}
+
+#title a
+{
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+
+
+.box
+{
+  position: relative;
+  font-family: Cantarell, serif;
+  font-size: 23px;
+  height: 47px;
+  right: 0px;
+  margin-top: 13px;
+  margin-left: 40px;
+}
+
+.box:hover #list
+{
+  left: auto;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 0px;
+  z-index: 200;
+}
+
+
+
+#list
+{
+      list-style : none;
+      text-align : left;
+      left: -80em;
+      position: absolute;
+      display: block;
+      background:rgba(255, 255, 255, 1);
+      z-index: 100;
+}
+
+
+#list a:hover
+{
+display: run-in;
+padding:3px 15px 3px 15px;
+font-size: 36px;
+margin: auto;
+
+
+}
+
+
+
+.social
+{
+  display: flex;
+  max-height:60px;
+  z-index: 100;
+  margin-left: auto;
+  align-items: center;
+}
+
+.social img
+{
+  position: relative;
+  height: 30px;
+  width: 30px;
+
+}

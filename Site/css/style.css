@@ -1,0 +1,22 @@
+html,body
+{
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body
+{
+
+
+  background-attachment: scroll;
+    color: black;
+font-family: Cantarell, Helvetica, Arial, serif;
+  font-size: 24px;
+  margin-bottom: 250px;
+
+}
+
+.underline
+{
+  text-decoration: underline;
+}
