@@ -1,6 +1,8 @@
+  <h2><span class="underline">FUTURE ÉVÉ</span>NEMENT</h2>
+
 <div id="event_container">
 
-  <h2><span class="underline">FUTURE ÉVÉ</span>NEMENT</h2>
+
 
     <div class="event">
       <div class="event_image"><img src="images/placeholder.png"></div>
