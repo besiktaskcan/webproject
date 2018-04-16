@@ -36,8 +36,8 @@ a.hiddenanchor{
 	width: 60%;
 	right: 0px;
 	min-height: 560px;
-	margin: 0px auto;
-	width: 500px;
+	margin: 100px auto;
+	width: 550px;
 	position: relative;
 }
 
@@ -47,7 +47,7 @@ a.hiddenanchor{
 }
 
 #wrapper h1{
-	font-size: 48px;
+	font-size: 40px;
 	color: rgb(6, 106, 117);
 	padding: 2px 0 10px 0;
 
@@ -68,12 +68,13 @@ a.hiddenanchor{
 }
 
 #wrapper p{
-	margin-bottom:15px;
+	margin-bottom: 15px;
 }
 #wrapper p:first-child{
 	margin: 0px;
 }
 #wrapper label{
+  font-size: 20px;
 	color: #333;
 	position: relative;
 }
@@ -186,9 +187,10 @@ p.signin.button{
 p.change_link{
 	position: absolute;
 	color: #333;
+  margin-top: 80px;
 	left: 0px;
 	height: 20px;
-	width: 440px;
+	width: 89%;
 	padding: 17px 30px 20px 30px;
 	font-size: 22px	;
 	text-align: right;
@@ -260,6 +262,7 @@ p.change_link{
 	position: absolute;
 	top: 0px;
 	width: 88%;
+  height: 90%;
 	padding: 18px 6% 60px 6%;
 	margin: 0 0 35px 0;
 	background: rgb(247, 247, 247);
@@ -278,14 +281,10 @@ p.change_link{
 #login{
 	z-index: 22;
 }
-#logout{
-  z-index: 20;
-  opacity: 0;
 
-}
 #toregister:target ~ #wrapper #register,
 #tologin:target ~ #wrapper #login,
-#tologout:target ~ #wrapper #logout{
+{
 	z-index: 22;
 	-webkit-animation-name: fadeInLeft;
 	-moz-animation-name: fadeInLeft;
@@ -294,7 +293,15 @@ p.change_link{
 	animation-name: fadeInLeft;
 
 }
-
+#toregister:target ~ #wrapper #login,
+#tologin:target ~ #wrapper #register
+{
+	-webkit-animation-name: fadeOutLeft;
+	-moz-animation-name: fadeOutLeft;
+	-ms-animation-name: fadeOutLeft;
+	-o-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
+}
 
 /** the actual animation, credit where due : http://daneden.me/animate/ ***/
 .animate{

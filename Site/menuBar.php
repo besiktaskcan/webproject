@@ -15,13 +15,13 @@
                               <li><a href="#">Goodies</a></li>
                         </ul>
             </div>
-            <div class="box"><a href="Evenements">Événements</a>
+            <div class="box"><a href="listEvenement.php">Événements</a>
                         <ul id="list">
                               <li><a href="#">Prochainement</a></li>
                               <li><a href="#">Passer</a></li>
                         </ul>
             </div>
-            <div class="box"><a href="connexion.php#tologin"> Connexion </a></div>
+            <div class="box"><a href="connexion.php"> Connexion </a></div>
 
             <div class="social">
                 <a href="https://www.facebook.com/BdeExiaStrasbourg/">

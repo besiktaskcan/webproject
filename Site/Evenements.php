@@ -1,11 +1,13 @@
 <?php
 session_start();
+$q = htmlspecialchars($_GET["id"]);
 ?>
 <!DOCTYPE html>
 
 
 <html>
     <head>
+      <link rel="icon" href="http://example.com/favicon.png">
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
         <meta http-equiv="refresh" content=""/>
         <meta name="author" content="Florian Pfeifer">
@@ -17,13 +19,14 @@ session_start();
         <link rel="stylesheet" media="(orientation:landscape)" href="css/style-footer.css?<?php echo time(); ?>">
 
         <title>BDE EXIA CESI ST</title>
-
+        <?php
+        $id = intval($_GET['id']);
+        ?>
         <script>
+        var idrecup = <?php echo json_encode($id); ?>;
         function showUser(str) {
-          if (str=="") {
-            document.getElementById("txtHint").innerHTML="";
-            return;
-          }
+          str = idrecup
+
           if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp=new XMLHttpRequest();
@@ -38,6 +41,7 @@ session_start();
           xmlhttp.open("GET","getimage.php?q="+str,true);
           xmlhttp.send();
         }
+
         </script>
 
     </head>
@@ -46,6 +50,8 @@ session_start();
 
 
     <body onload="showUser(this.value)">
+
+
 
       <header>
         <?php include("menuBar.php"); ?>
@@ -56,8 +62,7 @@ session_start();
       </section>
 
       <section id="s2_event">
-              
-              <div id="txtHint"><b>Image will be shown here</b></div>
+              <div id="txtHint"></div>
       </section>
 
       <section id="s3_event">
