@@ -14,30 +14,32 @@ session_start();
         <link rel="stylesheet" media="(orientation:landscape)" href="css/style.css?<?php echo time(); ?>">
         <link rel="stylesheet" media="(orientation:landscape)" href="css/style-menuBar.css?<?php echo time(); ?>">
         <link rel="stylesheet" media="(orientation:landscape)" href="css/style-slideShow.css?<?php echo time(); ?>">
-        <link rel="stylesheet" media="(orientation:landscape)" href="css/style-footer.css?<?php echo time(); ?>">
-        <title>BDE EXIA CESI ST</title>
+        <title>GISELLE SHOP</title>
     </head>
 
 
-    <header>
-      <?php include("menuBar.php"); ?>
-    </header>
 
+    <div id="lapage">
     <body>
 
+      <header>
+        <?php include("menuBar.php"); ?>
+      </header>
 
-
-      <section id="s1">
+            <section id="s1">
               <?php include("slideShow.php"); ?>
-      </section>
+            </section>
 
-      <section id="s2">
+            <section id="s2">
               <?php include("eventMenu.php"); ?>
-      </section>
+            </section>
 
-      <section id="s3">
+            <section id="s3">
               <?php include("membreBDE.php"); ?>
-      </section>
+            </section>
+
+
+
 
           <script>
           var slideIndex = 1;
@@ -69,11 +71,16 @@ session_start();
 
           </script>
 
+
+
     </body>
 
     <footer>
-      <?php include("footer.php");?>
+
+      <?php include("footer.php"); ?>
+
     </footer>
 
-    
+
+</div>
 </html>

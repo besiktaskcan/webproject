@@ -24,8 +24,11 @@ if (!$con) {
 }
 
 
-$sql="SELECT * FROM image_event";
+$sql="SELECT * FROM image_goodie";
 $result = mysqli_query($con,$sql);
+
+$sql2="SELECT * FROM goodie";
+$result2 = mysqli_query($con,$sql2);
 
 echo '<div id ="eventPictures_section">';
 echo '<div id="eventPictures_title">';
@@ -34,10 +37,15 @@ echo '</div>';
 echo '<div id="eventPictures_container">';
 while($row = mysqli_fetch_array($result)) {
     echo '<div class="eventPictures_box">';
-    echo '<div class="event_picture"><img src='.$row["image"].' /></div>';
-    echo "</div>";
+		echo '<div class="event_picture" >
+					<img src='.$row["image"].'/>
+					</div>';
+					echo '<div class=boutique_article_infos>
+								<p>.$row["description"].</p>
+							</div>';
+		echo "</div>";
 }
-echo "</div>";
+	echo "</div>";
 echo "</div>";
 mysqli_close($con);
 ?>
