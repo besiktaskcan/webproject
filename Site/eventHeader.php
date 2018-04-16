@@ -1,27 +1,33 @@
+<?php
+try {$bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');}
+catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); echo $sql . "<br>" . $e->getMessage();}
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = $bdd->prepare("SELECT * FROM evenement WHERE id_event='".$q."'") ;
+    $sql->execute();
+    $eventinfo = $sql->fetch()
+
+?>
+  <div id="picture_uploader" class="box_window"><?php include("image.php") ?></div>
+
+
 <div id="eventHeader_section">
 
   <div id="eventHeader_container">
     <div class="eventHeader_box" id="eventHeader_title">
-      <h2>Titre de l'évènement</h2>
+      <h2><?php echo "$eventinfo[name]"; ?></h2>
     </div>
     <br>
 
     <div class="eventHeader_box" id="date">
-      Date
+      <?php echo "$eventinfo[date_event]"; ?>
     </div>
 
     <div class="eventHeader_box" id="lieu">
-      Lieu
+      <?php echo "Lieu"; ?>
     </div>
     <br>
     <div class="eventHeader_box" id="description">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida venenatis erat, nec laoreet nibh elementum id.
- Ut aliquam sem ullamcorper eros placerat, sed suscipit magna accumsan. Aenean lacinia imperdiet urna nec feugiat.
- Aliquam pellentesque, lectus ac euismod vehicula, erat orci egestas massa, at ullamcorper mi libero sit amet purus.
-  Donec placerat lorem ac ultricies varius. Praesent quis turpis et neque bibendum ornare vitae a sapien. Sed eu lacinia elit.
-  Praesent sit amet risus nec lacus lacinia facilisis.
-   Donec efficitur aliquam purus id sollicitudin. Curabitur vitae sem suscipit, facilisis nisi et, rhoncus lacus. Donec nisl ex, scelerisque ac tempus ut, consequat sit amet nunc.
-    Donec nulla erat, maximus a lectus pharetra, molestie gravida tellus.
+      <?php echo "$eventinfo[description]"; ?>
     </div>
 
   </div>
@@ -37,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida venenati
 
 
     <div class="eventHeader_gestion_box" id="ajouter_photo">
-    <a href="image.php">  Ajouter une photo</a>
+    <a href="#picture_uploader">  Ajouter une photo</a>
     </div>
 
 
@@ -54,4 +60,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida venenati
 
 
   </div>
+
 </div>

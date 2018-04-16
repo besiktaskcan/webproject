@@ -1,12 +1,9 @@
-    <html>
-    <head>
-    <title>Ma galerie</title>
-    </head>
+<div>
 
-    <body>
-
+  <a href="#" class="deleteMeetingClose">&times;</a>
+  <br/>
 	<p>Le fichier dois être une image : JPG, JPEG, PNG avec une taille maximale de 10Mo !</p>
-	<form method="post" enctype="multipart/form-data" action="image.php">
+	<form method="post" enctype="multipart/form-data" action="">
 		<p>
 
 		<input type="file" name="fichier" size="64"></br></br>
@@ -61,7 +58,7 @@
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO image_event (image, id_event) VALUES ('".$path."', 1)";
+        $sql = "INSERT INTO image_event (image, id_event) VALUES ('".$path."', '".$q."')";
         // use exec() because no results are returned
         $bdd->exec($sql);
         echo "New record created successfully";
@@ -79,8 +76,6 @@
 ?>
 
 
-	</br></br></br>
-</form>
 
-</body>
-</html>
+
+</div>

@@ -1,14 +1,48 @@
 <?php
 session_start();
+
+try {
+      //on se connecte à MySQL
+      $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
+
+      if(isset($_POST['formconnexion']))
+      {
+        $mailconnect = htmlspecialchars($_POST['mailconnect']);
+        $mdpconnect = sha1($_POST['mdpconnect']);
+
+        if(!empty($mailconnect) AND !empty($mdpconnect))
+        {
+          $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND password = ?");
+          $requser->execute(array($mailconnect, $mdpconnect));
+          $userexist = $requser->rowCount();
+          if($userexist == 1)
+          {
+            $userinfo = $requser->fetch();
+            $_SESSION['id_user'] = $userinfo['id_user'];
+            $_SESSION['firstname'] = $userinfo['firstname'];
+            $_SESSION['mail'] = $userinfo['mail'];
+            header("Location: profil.php?id=".$_SESSION['id_user']);
+          //  header("Location: boite_id.php");
+
+            //echo "vous êtes connectés!";
+
+          } else {
+            $erreur = "Mauvais email ou mot de passe!";
+
+          }
+        } else {
+          $erreur = "Tous les champs doivent être remplie!";
+
+        }
+      }
+
+} catch (Exception $e) {
+         //En cas d'erreur, on affiche un message et on arrête tout
+         die('Erreur : ' . $e->getMessage());
+}
 ?>
+
 <!DOCTYPE html>
-
-<!--####################################
- Auteur : Emma Prudent
- Date : 2017
- Contexte : Prosit Exia CESI - PHP/BDD
- #######################################-->
-
 <html>
 
     <head>
@@ -27,14 +61,10 @@ session_start();
     <?php include("menuBar.php"); ?>
     </header>
 
-
-
     <!-- Le corps -->
     <div id="corps">
 
-
 <div class="container">
-
 
             <section class="noS">
                 <div id="container" >
@@ -43,62 +73,33 @@ session_start();
                     <a class="hiddenanchor" id="tologout"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form method="post" action="scriptConnexion.php" autocomplete="on">
+                            <form method="post" action="" autocomplete="on">
                                 <h1>Connexion</h1>
                                 <p>
-                                    <label for="username" class="uname" data-icon="u" > Pseudo : </label>
-                                    <input id="username" name="pseudo" required="required" type="text" placeholder="pseudo"/>
+                                    <label class="uname" data-icon="u" > Email : </label>
+                                    <input name="mailconnect" type="email" placeholder="Email"/>
                                 </p>
                                 <p>
-                                    <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
-                                    <input id="password" name="motDePasse" required="required" type="password" placeholder="motdepasse" />
+                                    <label class="youpasswd" data-icon="p"> Mot de passe : </label>
+                                    <input name="mdpconnect" type="password" placeholder="mot de passe" />
                                 </p>
 
                                 <p class="login button">
-                                    <input type="submit" value="Connexion" />
+                                    <input type="submit" name="formconnexion" value="Connexion" />
                                 </p>
                                 <p class="change_link">
                                     Pas encore inscrit ?
-                                    <a href="#toregister">Inscription</a>
+                                    <a href=inscription.php>Inscription</a>
                                 </p>
                             </form>
+                            </br>
+                            <?php
+                              if (isset($erreur))
+                              {
+                                echo '<font color="red">'.$erreur."</font>";
+                              }
+                            ?>
                         </div>
-
-                        <div id="register" class="animate form">
-                            <form  method="post" action="scriptInscription.php" autocomplete="on">
-                                <h1> Inscription </h1>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u" >Pseudo : </label>
-                                    <input id="usernamesignup" name="pseudo" required="required" type="text" placeholder="pseudo" />
-                                </p>
-
-                                <p>
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p" >Mot de passe : </label>
-                                    <input id="passwordsignup" name="motDePasse" required="required" type="password" placeholder="mot de passe"/>
-                                </p>
-
-                                <p class="signin button">
-                                    <input type="submit" value="S'inscrire"/>
-                                </p>
-                                <p class="change_link">
-                                    Déjà inscrit ?
-                                    <a href="#tologin"> Connexion </a>
-                                </p>
-                            </form>
-                        </div>
-
-                        <div id="logout" class="animate form">
-                            <form method="post" action="scriptDeconnexion.php" autocomplete="on">
-                                <h1>Déconnexion</h1>
-
-
-                                <p class="login button">
-                                    <input type="submit" value="Déconnexion" />
-                                </p>
-
-                            </form>
-                        </div>
-
                     </div>
                 </div>
             </section>
