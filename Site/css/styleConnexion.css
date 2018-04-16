@@ -294,15 +294,7 @@ p.change_link{
 	animation-name: fadeInLeft;
 
 }
-#toregister:target ~ #wrapper #login,
-#tologin:target ~ #wrapper #register
-#tologout:target ~ #wrapper #logout{
-	-webkit-animation-name: fadeOutLeft;
-	-moz-animation-name: fadeOutLeft;
-	-ms-animation-name: fadeOutLeft;
-	-o-animation-name: fadeOutLeft;
-	animation-name: fadeOutLeft;
-}
+
 
 /** the actual animation, credit where due : http://daneden.me/animate/ ***/
 .animate{

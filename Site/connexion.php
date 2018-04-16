@@ -59,7 +59,7 @@ session_start();
                                 </p>
                                 <p class="change_link">
                                     Pas encore inscrit ?
-                                    <a href="#tologout">Inscription</a>
+                                    <a href="#toregister">Inscription</a>
                                 </p>
                             </form>
                         </div>

@@ -3,7 +3,7 @@
     <div id="title">
       <a href="index.php">
       <img id="logo" src="images/logo.png" alt="logo du BDE"/>
-      BDE EXIA CESI ST
+              <p id="title_text">BDE EXIA CESI ST</p>
       </a>
     </div>
 
@@ -15,7 +15,7 @@
                               <li><a href="#">Goodies</a></li>
                         </ul>
             </div>
-            <div class="box"><a href="#">Événements</a>
+            <div class="box"><a href="Evenements">Événements</a>
                         <ul id="list">
                               <li><a href="#">Prochainement</a></li>
                               <li><a href="#">Passer</a></li>
