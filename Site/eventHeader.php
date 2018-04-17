@@ -60,6 +60,8 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
 ?>
   <div id="picture_uploader" class="box_window"><?php include("image.php") ?></div>
   <div id="event_deleter" class="box_window"><?php include("scripte/del_event.php") ?></div>
+  <div id="event_inscription" class="box_window"><?php include("scripte/inscripte_event.php") ?></div>
+  <div id="view_registered" class="box_window"><?php include("scripte/view_registered.php") ?></div>
 
 
 <div id="eventHeader_section">
@@ -101,11 +103,11 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
 
 
     <div class="eventHeader_gestion_box" id="afficher_inscrit">
-    <a href="#"> Voir les inscrit</a>
+    <a href="#view_registered"> Voir les inscrit</a>
     </div>
 
     <div class="eventHeader_gestion_box" id="inscrire_event">
-   <a href="#"> S'inscrire</a>
+   <a href="#event_inscription"> S'inscrire</a>
    </div>
 
 

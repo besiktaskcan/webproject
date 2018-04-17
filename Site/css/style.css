@@ -246,6 +246,27 @@ section
   display: block;
 }
 
+#event_inscription
+{
+  display: none;
+}
+
+#event_inscription:target
+{
+  display: block;
+}
+
+
+#view_registered
+{
+  display: none;
+}
+
+#view_registered:target
+{
+  display: block;
+}
+
 .box_window
 {
   position: fixed;
@@ -257,7 +278,7 @@ section
       margin-bottom: auto;
       text-align: center;
       width: 60%;
-      height: 200px;
+      height: auto;
     border: 5px solid #ccc;
   display: block;
 
