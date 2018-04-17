@@ -1,14 +1,60 @@
 <?php
+
 try {$bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');}
 catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); echo $sql . "<br>" . $e->getMessage();}
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = $bdd->prepare("SELECT * FROM evenement WHERE id_event='".$q."'") ;
     $sql->execute();
-    $eventinfo = $sql->fetch()
+    $eventinfo = $sql->fetch();
+
+    if($_SESSION['role']==2) {}
+    else{
+    ?>
+    <style type="text/css">#supprimer{
+    visibility: hidden;
+    }</style>
+    <style type="text/css">#afficher_inscrit{
+    visibility: hidden;
+    }</style>
+    <?php
+    }
+
+    if($_SESSION['role']==1) {
+      ?>
+    <style type="text/css">#afficher_inscrit{
+    display: none;
+    }</style>
+    <?php
+    }
+    else{
+    ?>
+    <style type="text/css">#inscrire_event{
+    display: none;
+    }</style>
+    <?php
+    }
+
+    if($_SESSION['role']==3) {
+      ?>
+    <style type="text/css">#afficher_inscrit{
+    display: none;
+    }</style>
+    <?php
+    }
+    else{
+    ?>
+    <style type="text/css">#signaler{
+    display: none;
+    }</style>
+    <?php
+    }
+
+
+
 
 ?>
   <div id="picture_uploader" class="box_window"><?php include("image.php") ?></div>
-
+  <div id="event_deleter" class="box_window"><?php include("scripte/del_event.php") ?></div>
 
 <div id="eventHeader_section">
 
@@ -37,7 +83,7 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
 
 
     <div class="eventHeader_gestion_box" id="supprimer">
-      <a href="#">Supprimer</a>
+      <a href="#event_deleter">Supprimer</a>
     </div>
 
 
@@ -56,6 +102,11 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
 
     <div class="eventHeader_gestion_box" id="signaler">
     <a href="#"> Signaler</a>
+    </div>
+
+
+    <div class="eventHeader_gestion_box" id="inscrire_event">
+    <a href="#"> S'inscrire</a>
     </div>
 
 

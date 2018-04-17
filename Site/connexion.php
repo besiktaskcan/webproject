@@ -21,7 +21,8 @@ try {
             $_SESSION['id_user'] = $userinfo['id_user'];
             $_SESSION['firstname'] = $userinfo['firstname'];
             $_SESSION['mail'] = $userinfo['mail'];
-            header("Location: profil.php?id=".$_SESSION['id_user']);
+            $_SESSION['role'] = $userinfo['role'];
+            header("Location: listEvenement.php?id=".$_SESSION['id_user']);
           //  header("Location: boite_id.php");
 
             //echo "vous êtes connectés!";

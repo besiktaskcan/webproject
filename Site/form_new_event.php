@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
-	
+
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -30,7 +30,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 	</p>
 	</form>
 <?php
-	$id_user_connected = $_SESSION['id_user'];
 	$png = ".png";
 	$rand = '';
  if( isset($_POST['envoyer']) )
@@ -39,12 +38,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 	$description_post = $_POST['description'];
 	$prix_post = $_POST['prix'];
 	$date_post = $_POST['date'];
-	
+
 	$status_event = 1;
-	//$id_user = $_SESSION['id_user'];
-	$id_user = 6;	//IMPORTANT !!! SUPRIMER APRES
-	
-	
+
+
 	$content_dir = 'eventimages/'; // dossier où sera déplacé le fichier
 	$tmp_image = $_FILES['image']['tmp_name'];
 
@@ -56,13 +53,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 		$type_file = $_FILES['image']['type']; //verif l'extension jpg/png
 		if( !strstr($type_file, 'png') && !strstr($type_file, 'jpeg')&& !strstr($type_file, 'jpg'))
 		{ exit("Le fichier n'est pas une image"); }
-		
+
 		$maxsize = 10485760;
 		if ($_FILES['image']['size'] > $maxsize)	//verifier la taille en octets
 		{ exit ("Le fichier est trop gros"); }
 		echo "Le fichier est de la bonne taille !";
 		echo "<br/>";
-		
+
 		$maxwidth = 9000;
 		$maxheight = 9000;
 		$image_length = getimagesize($_FILES['image']['tmp_name']);	//verifier la taille en pixel
@@ -70,14 +67,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 		{ exit("Image trop grande, veillez la réduire un peu !");}
 		echo "Image de taille acceptable", "<br/>";
 
-			
+
 		$name_file = $_FILES['image']['name'];
 		$name_file = rand();	//random nom du fichier
 		$name_file .= ".jpg";
 		if( !move_uploaded_file($tmp_image, $content_dir . $name_file) ) //copie du fichier dans le dossier
 		{ exit("Impossible de copier le fichier dans $content_dir"); }	//verif si il a été copié
 		echo "Le fichier a bien été uploadé !", "<br/>";
-		
+
 		echo $titre_post;
 		echo "</br>";
 		echo $description_post;
@@ -87,13 +84,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 		echo $date_post;
 		echo "</br>";
 		echo $content_dir;
-		
+
 		$req = $bdd->prepare('INSERT INTO evenement(name, status, description, date_event, prix_event, id_user) VALUES(?, ?, ?, ?, ?, ?)');
 		$req->execute(array($titre_post, $status_event, $description_post, $date_post, $prix_post, $id_user));
-			
-		$req = $bdd->prepare('INSERT INTO image_event(image, id_user) VALUES(?, ?)');
-		$req->execute(array($content_dir, $id_user));
-		
+
+		$req = $bdd->prepare('INSERT INTO image_event(image, id_event) VALUES(?, ?)');
+		$req->execute(array($content_dir, $id_event));
+
 }
 
 ?>

@@ -21,8 +21,6 @@
 		$tmp_file = $_FILES['fichier']['tmp_name'];
 
 
-
-
 		if( !is_uploaded_file($tmp_file) ) //verif si le fichier existe
 		{ exit("Le fichier est introuvable"); }
 		echo "Fichier ajouté en mémoire";

@@ -225,14 +225,15 @@ section
   color: white;
 }
 
-#supprimer
+
+#event_deleter
 {
-    visibility: hidden;
+  display: none;
 }
 
-#ajouter_photo
+#event_deleter:target
 {
-
+  display: block;
 }
 
 #picture_uploader
@@ -273,17 +274,6 @@ section
     color: red;
 }
 
-
-
-#afficher_inscrit
-{
-    visibility: hidden;
-}
-
-#signaler
-{
-    display: none;
-}
 
 
 

@@ -65,9 +65,7 @@ $q = htmlspecialchars($_GET["id"]);
               <div id="txtHint"></div>
       </section>
 
-      <section id="s3_event">
-              <?php include("slideShow2.php"); ?>
-      </section>
+    
 
 
 
