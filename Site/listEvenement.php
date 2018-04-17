@@ -27,7 +27,14 @@
 
             if(isset($_POST['voir_info_event']))
             {
-              header("Location: Evenements.php?id=".$_POST['postid_event']);
+              if(empty($_SESSION['id_user']))
+              {
+                header("Location:connexion.php");
+              }
+              else
+              {
+                header("Location: Evenements.php?id=".$_POST['postid_event']);
+              } 
             }
             ?>
             <div id="eventlist_section">
@@ -56,7 +63,7 @@
                       <?php echo $eventinfo['prix_event'];?>€
                       </div>
                       <br/>
-                      
+
                       <?php echo '<input name="postid_event" type="text" value='. $eventinfo["id_event"].' />'; ?>
                       <input type="submit" name="voir_info_event" value="Voir les information">
                       </form>

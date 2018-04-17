@@ -1,3 +1,20 @@
+<?php
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
+
+
+if(!empty($_SESSION['id_user']))
+{
+  ?>
+  <style type="text/css">#connexion_box{
+  display: none;
+  }</style>
+  <?php
+}
+?>
+
 <div id="bar">
 
     <div id="title">
@@ -8,7 +25,7 @@
     </div>
 
 
-            <div class="box"><a href="#">Boutique</a>
+            <div class="box"><a href="boutique.php">Boutique</a>
                         <ul id="list">
                               <li><a href="#">Sweat</a></li>
                               <li><a href="#">Tacos</a></li>
@@ -21,7 +38,16 @@
                               <li><a href="#">Passer</a></li>
                         </ul>
             </div>
-            <div class="box"><a href="connexion.php"> Connexion </a></div>
+            <div class="box" id="connexion_box"><a href="connexion.php"> Connexion </a></div>
+
+
+           <div class="box">
+             <?php
+             if(!empty($_SESSION['id_user'])) {
+                 echo "<a href='logout.php'>Déconnexion</a>";
+             }
+             ?>
+           </div>
 
             <div class="social">
                 <a href="https://www.facebook.com/BdeExiaStrasbourg/">

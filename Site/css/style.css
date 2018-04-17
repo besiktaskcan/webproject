@@ -225,13 +225,14 @@ section
   color: white;
 }
 
-#supprimer
+#event_deleter
 {
-    visibility: hidden;
+    display: none;
 }
 
-#ajouter_photo
+#event_deleter:target
 {
+  display: block;
 
 }
 
@@ -275,15 +276,7 @@ section
 
 
 
-#afficher_inscrit
-{
-    visibility: hidden;
-}
 
-#signaler
-{
-    display: none;
-}
 
 
 
