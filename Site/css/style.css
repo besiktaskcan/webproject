@@ -146,7 +146,7 @@ section
 {
   position: relative;
   background-color: rgba(200, 10, 50, 1);
-
+  overflow: hidden;
   background-image: url("../images/Red_background2.png");
   z-index: 1;
   padding-top: 40px;
@@ -168,12 +168,33 @@ section
   padding-bottom: 30px;
 }
 
+#eventHeader_image
+{
+  position:  absolute;
+  z-index: -1;
+  width: 100%;
+
+
+
+}
+
+#background_img_event
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+
+
+}
+
 .eventHeader_box
 {
   justify-content: center;
   display: inline-flex;
   margin: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #eventHeader_title h2
@@ -192,10 +213,7 @@ section
     padding: 10px 30px 10px 30px;
 }
 
-#lieu
-{
-    padding: 10px 30px 10px 30px;
-}
+
 
 #description
 {
@@ -233,7 +251,6 @@ section
 #event_deleter:target
 {
   display: block;
-
 }
 
 #picture_uploader
@@ -426,9 +443,24 @@ margin: 10px;
 box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
 }
 
+#eventlist_suggestion_container
+{
+
+border: 4px white solid;
+border-radius: 5px;
+background-color: rgba(60, 60, 60, 1);
+margin: 10px;
+box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
+}
+
 #eventlist_section input[type="text"]
 {
   display: none;
+}
+
+#eventlist_section h2
+{
+  margin-top: 50px;
 }
 
 .eventinfo
@@ -437,4 +469,14 @@ box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
   display: inline-flex;
   margin: 10px;
   color: white;
+}
+
+#Formul_boite_idee
+{
+    display: none;
+}
+
+#Formul_boite_idee:target
+{
+  display: block;
 }

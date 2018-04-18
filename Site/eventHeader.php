@@ -50,14 +50,13 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
    }</style>
    <?php
    }
-
-
-
-
-
-
-
 ?>
+
+
+<div id="eventHeader_image" >
+    <?php  echo '<img id="background_img_event" src='.$eventinfo["background_img_event"].' />';?>
+</div>
+
   <div id="picture_uploader" class="box_window"><?php include("image.php") ?></div>
   <div id="event_deleter" class="box_window"><?php include("scripte/del_event.php") ?></div>
   <div id="event_inscription" class="box_window"><?php include("scripte/inscripte_event.php") ?></div>
@@ -66,7 +65,12 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
 
 <div id="eventHeader_section">
 
+
+
   <div id="eventHeader_container">
+
+
+
     <div class="eventHeader_box" id="eventHeader_title">
       <h2><?php echo "$eventinfo[name]"; ?></h2>
     </div>
@@ -76,9 +80,7 @@ catch (PDOException $e) {die("L'accès à la base de donnée est impossible."); 
       <?php echo "$eventinfo[date_event]"; ?>
     </div>
 
-    <div class="eventHeader_box" id="lieu">
-      <?php echo "Lieu"; ?>
-    </div>
+
     <br>
     <div class="eventHeader_box" id="description">
       <?php echo "$eventinfo[description]"; ?>
