@@ -35,7 +35,7 @@ if(!empty($_SESSION['id_user']))
             <div class="box"><a href="listEvenement.php">Événements</a>
                         <ul id="list">
                               <li><a href="#">Prochainement</a></li>
-                              <li><a href="#">Passer</a></li>
+                              <li><a href="listEvenement.php#eventlist_passer_container">Passer</a></li>
                         </ul>
             </div>
             <div class="box" id="connexion_box"><a href="connexion.php"> Connexion </a></div>
@@ -44,7 +44,7 @@ if(!empty($_SESSION['id_user']))
            <div class="box">
              <?php
              if(!empty($_SESSION['id_user'])) {
-                 echo "<a href='logout.php'>Déconnexion</a>";
+                 echo "<a href='scripte/logout.php'>Déconnexion</a>";
              }
              ?>
            </div>

@@ -18,11 +18,12 @@
           <?php include("menuBar.php"); ?>
         </header>
 
+
         <?php
         try {
             $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $bdd->prepare("SELECT * FROM evenement") ;
+            $sql = $bdd->prepare("SELECT * FROM evenement WHERE status= 0") ;
             $sql->execute();
 
             if(isset($_POST['voir_info_event']))
@@ -34,16 +35,19 @@
               else
               {
                 header("Location: Evenements.php?id=".$_POST['postid_event']);
-              } 
+              }
             }
             ?>
             <div id="eventlist_section">
+              <div id="eventPictures_title">
+              <h2 style="color: white;">Prochain événements</h2>
+              </div>
             <?php        // On affiche chaque entrée une à une
               while ($eventinfo = $sql->fetch())
               {
               ?>
-                  <div id="eventlist_container">
-                    <form method="post" action="" autocomplete="on">
+                  <div id="eventlist_prochain_container">
+
                       <div class="eventinfo">
                         Événement n°<?php echo $eventinfo['id_event']; ?>
                       </div>
@@ -63,26 +67,66 @@
                       <?php echo $eventinfo['prix_event'];?>€
                       </div>
                       <br/>
-
+                      <form method="post" action="" autocomplete="on">
                       <?php echo '<input name="postid_event" type="text" value='. $eventinfo["id_event"].' />'; ?>
                       <input type="submit" name="voir_info_event" value="Voir les information">
                       </form>
                  </div>
+              <?php
+              }
+              $sql->closeCursor(); // Termine le traitement de la requête
+              $sql = $bdd->prepare("SELECT * FROM evenement WHERE status= 1") ;
+              $sql->execute();
+
+              ?>
+                <div id="eventPictures_title">
+                <h2 style="color: white;">Événement passer</h2>
+                </div>
+              <?php        // On affiche chaque entrée une à une
+                while ($eventinfo = $sql->fetch())
+                {
+                ?>
+                    <div id="eventlist_passer_container">
+
+                        <div class="eventinfo">
+                          Événement n°<?php echo $eventinfo['id_event']; ?>
+                        </div>
+                        <br/>
+                        <div class="eventinfo" id="name_event">
+                          <?php echo $eventinfo['name']; ?>
+                        </div>
+                        <br/>
+                        <div class="eventinfo" id="description_event">
+                        <?php echo $eventinfo['description']; ?>
+                        </div>
+                        <br/>
+                        <div class="eventinfo" id="date_event">
+                        <?php echo $eventinfo['date_event']; ?>
+                        </div>
+                        <div class="eventinfo" id="prix_event">
+                        <?php echo $eventinfo['prix_event'];?>€
+                        </div>
+                        <br/>
+                        <form method="post" action="" autocomplete="on">
+                        <?php echo '<input name="postid_event" type="text" value='. $eventinfo["id_event"].' />'; ?>
+                        <input type="submit" name="voir_info_event" value="Voir les information">
+                        </form>
+                   </div>
+              </div>
+
 
 
               <?php
-              }
-
-
-              $sql->closeCursor(); // Termine le traitement de la requête
             }
-
+            $sql->closeCursor(); // Termine le traitement de la requête
+          }
         catch (PDOException $e) {
           die("L'accès à la base de donnée est impossible.");
           echo $sql . "<br>" . $e->getMessage();
           }
         ?>
-        </div>
+
+
     </body>
 
     <footer>

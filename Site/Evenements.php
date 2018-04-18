@@ -38,7 +38,7 @@ $q = htmlspecialchars($_GET["id"]);
               document.getElementById("txtHint").innerHTML=this.responseText;
             }
           }
-          xmlhttp.open("GET","getimage.php?q="+str,true);
+          xmlhttp.open("GET","scripte/getimage.php?q="+str,true);
           xmlhttp.send();
         }
 
@@ -47,11 +47,7 @@ $q = htmlspecialchars($_GET["id"]);
     </head>
 
 
-
-
     <body onload="showUser(this.value)">
-
-
 
       <header>
         <?php include("menuBar.php"); ?>
@@ -64,9 +60,6 @@ $q = htmlspecialchars($_GET["id"]);
       <section id="s2_event">
               <div id="txtHint"></div>
       </section>
-
-      
-
 
 
         <footer>

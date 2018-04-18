@@ -406,7 +406,7 @@ section
 
 }
 
-#eventlist_container
+#eventlist_prochain_container
 {
 
 border: 4px white solid;
@@ -416,7 +416,17 @@ margin: 10px;
 box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
 }
 
-#eventlist_container input[type="text"]
+#eventlist_passer_container
+{
+
+border: 4px white solid;
+border-radius: 5px;
+background-color: rgba(60, 60, 60, 1);
+margin: 10px;
+box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
+}
+
+#eventlist_section input[type="text"]
 {
   display: none;
 }
