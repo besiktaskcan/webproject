@@ -39,22 +39,50 @@ session_start();
           xmlhttp.send();
         }
         </script>
+		<script>
+        function showPanier(str) {
+          if (str=="") {
+            document.getElementById("txtHint2").innerHTML="";
+            return;
+          }
+          if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+          } else { // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+              document.getElementById("txtHint2").innerHTML=this.responseText;
+            }
+          }
+          xmlhttp.open("GET","getCart.php?q="+str,true);
+          xmlhttp.send();
+        }
+        </script>
+	
 
     </head>
 
 
 
 
-    <body onload="showGoodies(this.value)">
+    <body onload="showGoodies(this.value);showPanier(this.value)">
 
       <header>
         <?php include("menuBar.php"); ?>
       </header>
+	  <div>
+	<aside id="s2_panier">
+		<div id="txtHint2"><b></b>
+	</aside>
 
+	<article id="article_boutique">
 	<section id="s1_boutique">      
 		<div id="txtHint"><b></b></div>
 	</section>
-
+	</article>
+	</div>
 
 
         <footer>

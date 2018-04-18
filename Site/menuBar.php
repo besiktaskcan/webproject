@@ -8,7 +8,7 @@
     </div>
 
 
-            <div class="box"><a href="#">Boutique</a>
+            <div class="box"><a href="boutique.php">Boutique</a>
                         <ul id="list">
                               <li><a href="#">Sweat</a></li>
                               <li><a href="#">Tacos</a></li>
