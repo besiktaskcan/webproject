@@ -21,7 +21,7 @@ session_start();
         <script>
         function showGoodies(str) {
           if (str=="") {
-            document.getElementById("txtHint").innerHTML="";
+            document.getElementById("txtHint1").innerHTML="";
             return;
           }
           if (window.XMLHttpRequest) {
@@ -32,7 +32,7 @@ session_start();
           }
           xmlhttp.onreadystatechange=function() {
             if (this.readyState==4 && this.status==200) {
-              document.getElementById("txtHint").innerHTML=this.responseText;
+              document.getElementById("txtHint1").innerHTML=this.responseText;
             }
           }
           xmlhttp.open("GET","getimageBoutique.php?q="+str,true);
@@ -60,7 +60,7 @@ session_start();
           xmlhttp.send();
         }
         </script>
-	
+
 
     </head>
 
@@ -78,8 +78,8 @@ session_start();
 	</aside>
 
 	<article id="article_boutique">
-	<section id="s1_boutique">      
-		<div id="txtHint"><b></b></div>
+	<section id="s1_boutique">
+		<div id="txtHint1"><b></b></div>
 	</section>
 	</article>
 	</div>

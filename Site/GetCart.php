@@ -11,10 +11,7 @@ if (!$con) {
 $sql="SELECT * FROM image_event WHERE id_event = '".$q."'";
 $result = mysqli_query($con,$sql);
 
-echo '<div id ="eventPictures_section">';
-echo '<div id="eventPictures_title">';
-echo '<h2>Images de l\'évènement</h2>';
-echo '</div>';
+
 echo '<div id="eventPictures_container">';
 while($row = mysqli_fetch_array($result)) {
     echo '<div class="eventPictures_box">';
@@ -84,7 +81,7 @@ echo '<div id ="goodies_section">';
 			echo '<div id="eventPictures_container">';
 			$row2 = mysqli_fetch_array($result2);
 			while($row = mysqli_fetch_array($result)) {
-   	
+
 			// description part
 			echo '<div id="cart_container">';
 				echo '<p>Nombre: '.$row["quantite"].'</p>';

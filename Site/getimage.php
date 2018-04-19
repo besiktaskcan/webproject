@@ -26,7 +26,7 @@ try {
               <?php echo '<div class="event_picture"><img src='.$row["image"].' /></div>'; ?>
 
 
-              <form method="post"  onclick="imageLike(this.value)">
+              <form method="post"  class="likes_box"  id="event_picture_like" onclick="imageLike(this.value)">
               <input type="button" name="like" value="&#128077;"  onclick="imageLike( <?php echo $row["id_image"]; ?>)">
               </form>
 
@@ -34,6 +34,8 @@ try {
 
 
               <div class="likes_box" id="event_picture_number_of_likes">  Likes :<?php include("scripte/afficher_like.php") ?></div>
+
+              <div class="comment"> Commentaire :<?php include("comment.php") ?></div>
               </div>
               <?php
             }

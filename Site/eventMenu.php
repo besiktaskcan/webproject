@@ -6,17 +6,17 @@
 
         <div class="event">
           <div class="event_image"><img src="images/placeholder.png"/></div>
-          <div class="event_text">Here goes a discription for an event that takes place in the nearest futur!</div>
+          <div class="event_text">Lan shadow N°23, tournois Lol et Fortnite</div>
         </div>
 
         <div class="event">
           <div class="event_image"><img src="images/placeholder.png"/></div>
-          <div class="event_text">Here goes a discription for an event that takes place in the nearest futur!</div>
+          <div class="event_text">After work du mardi 24 avril 2018 au CESI !</div>
         </div>
 
         <div class="event">
           <div class="event_image"><img src="images/placeholder.png"/></div>
-          <div class="event_text">Here goes a discription for an event that takes place in the nearest futur!</div>
+          <div class="event_text">Evènement de fin d'année au CESI!</div>
         </div>
 
     </div>

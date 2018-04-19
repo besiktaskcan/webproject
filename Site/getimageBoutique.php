@@ -2,17 +2,7 @@
 <html>
 <head>
 <style>
-table {
 
-    border-collapse: collapse;
-}
-
-table, td, th {
-    border: 1px solid black;
-    padding: 5px;
-}
-
-th {text-align: left;}
 </style>
 </head>
 <body>
@@ -40,39 +30,39 @@ echo '<h2>Les goodies:</h2>';
 echo '</div>';
 echo '<div id="eventPictures_container">';
 while($row = mysqli_fetch_array($result) and $row2 = mysqli_fetch_array($result2)) {
-   
+
    // the image
    echo '<div class="eventPictures_box">
 				<div class="event_picture" >
 					<img src='.$row["image"].'>
 				</div>';
-					
+
 					// description part
 					echo '<div class=boutique_article_infos>
 								<p>'.$row2["description"].'</p>';
-					
+
 					// buy button
 					/*echo'<form method="post" action="">
 						<div class="eventHeader_gestion_box" id="acheter_goodie">
 								<input type="button" name="ajouter_panier" value="Acheter"/>
 							</div>
 							 </form>';
-							
+
 							//name="'.$row2["id_goodie"].'" */
 					?>
 					<form method="post" action="acheter.php">
 					<input type="submit" name="ajouter_panier" value="test">
 					</form>
-					
-					
-					
+
+
+
 						<?php
-						
-						
-						
+
+
+
 						/*
 						if( isset($_POST['ajouter_panier']))
-						{							
+						{
 							$quantite = 1;//$_POST['quantite'];
 							$id_commande = 1;//$_POST['id_commande'];
 							$id_goodie = 1;//$_POST['id_goodie'];
@@ -80,21 +70,21 @@ while($row = mysqli_fetch_array($result) and $row2 = mysqli_fetch_array($result2
 							echo "hello";
 							$req=$bdd->prepare("INSERT INTO contient (quantite, id_commande, id_goodie) VALUES(?, ?, ?)");
 							$req->execute(array($quantite, $id_commande, $id_goodie));
-							
-							
-							
-							
-							
-							
+
+
+
+
+
+
 						}*/
 
 
-							
+
 				echo'</div>';
 		echo "</div>";
 }
 	echo "</div>";
-	
+
 	/*
 	try {
 	$bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
@@ -111,12 +101,12 @@ while($row = mysqli_fetch_array($result) and $row2 = mysqli_fetch_array($result2
 		$req->execute(array($quantite, $id_commande, $id_goodie));
 		echo "boucle";
 	}
-	
-	
+
+
 } catch (Exception $e) {
 	die("L'accès à la base de donnée est impossible.");
 }*/
-	
+
 mysqli_close($con);
 ?>
 </body>

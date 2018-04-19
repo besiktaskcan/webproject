@@ -30,7 +30,7 @@ try
 
 
     // On recupere tout le contenu de la table Client
-$sql = $bdd->prepare('SELECT name, firstname, mail FROM utilisateur RIGHT JOIN participe ON utilisateur.id_user = participe.id_user  WHERE participe.id_event = 1');
+$sql = $bdd->prepare("SELECT name, firstname, mail FROM utilisateur RIGHT JOIN participe ON utilisateur.id_user = participe.id_user  WHERE participe.id_event = '".$q."'");
 
   $sql->execute();
 // On affiche le resultat

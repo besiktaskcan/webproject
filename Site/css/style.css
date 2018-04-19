@@ -1,3 +1,5 @@
+
+
 html,body,footer
 {
   margin: 0;
@@ -10,10 +12,15 @@ body
 
   background-attachment: scroll;
   color: black;
-  font-family:  Helvetica, Arial, serif;
+  font-family:   Arial, serif;
   font-size: 24px;
 
 
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
 }
 
 .underline

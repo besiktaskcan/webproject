@@ -1,13 +1,13 @@
 <div id="footer_container">
   <div id="footer_box_container">
       <div class="sign_in_footer">
-        <p>Sign Up for our email updates</p>
-        <p>Stay up to date with our special events and our latest products on top sale!</p>
+        <p>Inscrivez vous !</p>
+        <p>Recevez toutes les actualités par mail !</p>
         <a href="connexion.php#tologin"> Connexion </a>
 
       </div>
       <div class="social_footer">
-          <p>Stay connected with us!</p>
+          <p>Restez connecté !</p>
         <div class="social_footer_logo">
 
 
@@ -38,9 +38,9 @@
       </div>
 
       <div class="contact_footer">
-        <p>Contact us!</p>
-        <p>Questions? We got answers.</p>
-        <a href="#">Email Us</a>
+        <p>Contactez nous !</p>
+        <p>Des questions ?</p>
+        <a href="#">Envoyez nous un e-mail</a>
       </div>
 
       <div class="partner_footer">
