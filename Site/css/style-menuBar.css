@@ -81,7 +81,7 @@ padding-left: 10px
 .box
 {
   position: relative;
-  font-family: Cantarell, serif;
+  font-family: Cantarell,Arial, serif;
   font-size: 23px;
   height: 37px;
   right: 0px;
@@ -116,7 +116,10 @@ padding-left: 10px
 
 }
 
-
+#list:nth-child(2)
+{
+    width: 180px;
+}
 
 
 
@@ -127,7 +130,7 @@ padding-left: 10px
   display: flex;
   max-height:60px;
   z-index: 100;
-  padding-right: 10px;
+
   align-items: center;
 }
 

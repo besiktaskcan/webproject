@@ -1,6 +1,6 @@
 <div id="member_section">
 
-    <h2><span class="underline">MEMBRE D</span>U BDE</h2>
+    <h2><span class="underline">MEMBRES DU BDE</span></h2>
 
     <div id="member_container">
 

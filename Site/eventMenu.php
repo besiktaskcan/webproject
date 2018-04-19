@@ -1,6 +1,6 @@
 <div id="event_section">
 
-    <h2><span class="underline">FUTURE ÉVÉ</span>NEMENT</h2>
+    <h2><span class="underline">FUTURS ÉVÉNEMENTS</span></h2>
 
     <div id="event_container">
 

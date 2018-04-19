@@ -26,17 +26,13 @@ if(!empty($_SESSION['id_user']))
 
 
             <div class="box"><a href="boutique.php">Boutique</a>
-                        <ul id="list">
-                              <li><a href="#">Sweat</a></li>
-                              <li><a href="#">Tacos</a></li>
-                              <li><a href="#">Goodies</a></li>
-                        </ul>
+                        
             </div>
             <div class="box"><a href="listEvenement.php">Événements</a>
                         <ul id="list">
-                              <li><a href="listEvenement.php#">Prochainement</a></li>
-                              <li><a href="listEvenement.php#eventlist_passer_title">Passer</a></li>
-                              <li><a href="listEvenement.php#eventlist_boite_id">Boite à idée</a></li>
+                              <li><a href="listEvenement.php#">A venir</a></li>
+                              <li><a href="listEvenement.php#eventlist_passer_title">Passé</a></li>
+                              <li><a href="listEvenement.php#eventlist_boite_id">Boite à idées</a></li>
                         </ul>
             </div>
             <div class="box" id="connexion_box"><a href="connexion.php"> Connexion </a></div>

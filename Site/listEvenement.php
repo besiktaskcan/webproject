@@ -32,13 +32,14 @@
             {
               if($_SESSION['role']==2) {}
 
-            }
+
             else{
             ?>
             <style type="text/css">#creat_event{
             visibility: hidden;
             }</style>
             <?php
+            }
             }
 
             if(isset($_POST['voir_info_event']))
@@ -64,7 +65,7 @@
             ?>
             <div id="eventlist_section">
 
-              <h2 style="color: white;">Prochain événements</h2>
+              <h2 style="color: white;">Prochains événements</h2>
 
             <?php        // On affiche chaque entrée une à une
               while ($eventinfo = $sql->fetch())
@@ -104,7 +105,7 @@
 
               ?>
 
-                <h2 id="eventlist_passer_title" style="color: white;">Événement passer</h2>
+                <h2 id="eventlist_passer_title" style="color: white;">Événements passés</h2>
               <?php        // On affiche chaque entrée une à une
                 while ($eventinfo = $sql->fetch())
                 {
@@ -176,7 +177,7 @@
                          </div>
                          <br/>
                          <div class="eventinfo" id="username_event">
-                           Proposer par :
+                           Proposé par :
                          <?php echo $Username['name']; echo "  "; echo $Username['firstname'];?>
                          </div>
 
