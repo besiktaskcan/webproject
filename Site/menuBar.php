@@ -34,8 +34,9 @@ if(!empty($_SESSION['id_user']))
             </div>
             <div class="box"><a href="listEvenement.php">Événements</a>
                         <ul id="list">
-                              <li><a href="#">Prochainement</a></li>
-                              <li><a href="listEvenement.php#eventlist_passer_container">Passer</a></li>
+                              <li><a href="listEvenement.php#">Prochainement</a></li>
+                              <li><a href="listEvenement.php#eventlist_passer_title">Passer</a></li>
+                              <li><a href="listEvenement.php#eventlist_boite_id">Boite à idée</a></li>
                         </ul>
             </div>
             <div class="box" id="connexion_box"><a href="connexion.php"> Connexion </a></div>

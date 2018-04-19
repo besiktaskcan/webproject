@@ -365,8 +365,7 @@ section
 }
 
 .event_picture{
-	   min-height: 300px;
-	   background-color: #d8d8d8;
+
 }
 
 .eventPictures_box {
@@ -403,8 +402,6 @@ section
     padding: 5px;
     background-color: white;
     font-size: 18px;
-    border: 1.3px black solid;
-    border-radius: 20px;
     position: relative;
     margin-right: 180px;
 

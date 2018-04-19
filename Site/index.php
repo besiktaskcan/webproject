@@ -33,7 +33,10 @@ session_start();
 
       <section id="s2">
               <?php include("eventMenu.php"); ?>
+              
       </section>
+
+
 
       <section id="s3">
               <?php include("membreBDE.php"); ?>
@@ -75,5 +78,5 @@ session_start();
       <?php include("footer.php");?>
     </footer>
 
-    
+
 </html>

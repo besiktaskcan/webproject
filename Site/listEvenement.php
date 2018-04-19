@@ -104,7 +104,7 @@
 
               ?>
 
-                <h2 style="color: white;">Événement passer</h2>
+                <h2 id="eventlist_passer_title" style="color: white;">Événement passer</h2>
               <?php        // On affiche chaque entrée une à une
                 while ($eventinfo = $sql->fetch())
                 {
@@ -146,7 +146,7 @@
 
                ?>
 
-               <h2 style="color: white;">Boite à idées</h2>
+               <h2 id="eventlist_boite_id" style="color: white;">Boite à idées</h2>
             <div class="listevent_gestion_box" id="propose_event">
            <a href="#Formul_boite_idee"> Proposer un Événement! </a>
          </div>
@@ -176,7 +176,7 @@
                          </div>
                          <br/>
                          <div class="eventinfo" id="username_event">
-                           Proposer par : 
+                           Proposer par :
                          <?php echo $Username['name']; echo "  "; echo $Username['firstname'];?>
                          </div>
 

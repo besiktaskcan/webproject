@@ -1,6 +1,10 @@
+<script>
 
+</script>
 <?php
+
 $q = intval($_GET['q']);
+
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -20,8 +24,16 @@ try {
               ?>
               <div class="eventPictures_box">
               <?php echo '<div class="event_picture"><img src='.$row["image"].' /></div>'; ?>
-              <div class="likes_box" id="event_picture_like"><a href="#"><img src="images/like.svg" alt="like"/> </a></div>
-              <div class="likes_box" id="event_picture_number_of_likes">  Likes </div>
+
+
+              <form method="post"  onclick="imageLike(this.value)">
+              <input type="button" name="like" value="&#128077;"  onclick="imageLike( <?php echo $row["id_image"]; ?>)">
+              </form>
+
+
+
+
+              <div class="likes_box" id="event_picture_number_of_likes">  Likes :<?php include("scripte/afficher_like.php") ?></div>
               </div>
               <?php
             }
