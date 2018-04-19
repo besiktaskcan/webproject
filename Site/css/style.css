@@ -28,6 +28,17 @@ h2
 }
 
 
+#s2_panier
+{
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+	height: 100%
+}
+
 section
 {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
@@ -235,6 +246,12 @@ section
   color: white;
 }
 
+#acheter_goodie a
+{
+  text-decoration: none;
+  color: white;
+}
+
 .eventHeader_gestion_box
 {
   margin: 10px;
@@ -329,6 +346,17 @@ section
   padding-bottom: 30px;
 }
 
+#goodies_section
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  display: block;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
 #eventPictures_container {
   display: flex;
   justify-content: center;
@@ -336,6 +364,10 @@ section
    align-items: flex-start;
 }
 
+.event_picture{
+	   min-height: 300px;
+	   background-color: #d8d8d8;
+}
 
 .eventPictures_box {
   background-color: #f1f1f1;
@@ -344,7 +376,6 @@ section
   text-align: center;
   font-size: 18px;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.4),3px 5px 7px rgba(0, 0, 0, 0.4);
-
 }
 
 .event_picture img
