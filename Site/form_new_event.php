@@ -14,6 +14,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 $sql = $bdd->prepare("SELECT * FROM suggestion_event WHERE id_suggestion = '".$q."'") ;
 $sql->execute();
 $eventinfo = $sql->fetch();
+
 ?>
 	<form method="post" enctype="multipart/form-data" action="">	<!--FORMULAIRE AJOUT EVENT-->
 	<p>Entrez un titre :</br></br>
@@ -44,6 +45,7 @@ $eventinfo = $sql->fetch();
 
 	$content_dir = 'eventimages/'; // dossier où sera déplacé le fichier
 	$tmp_image = $_FILES['image']['tmp_name'];
+  echo "$date_post";
 
 		if( !is_uploaded_file($tmp_image) ) //verif si le fichier existe
 		{ exit("Le fichier est introuvable"); }
@@ -82,15 +84,12 @@ $eventinfo = $sql->fetch();
 		echo $prix_post;			echo "</br>";
 		echo $date_post;			echo "</br>";
 		echo $content_dir;			echo "</br>";*/
-		if ($prix_post == 0)
-		{$prix_post = "Gratuit";}
-		/*echo "</br>";
-		echo $prix_post;*/
+	
 
     		$req = $bdd->prepare("INSERT INTO evenement(name, description, date_event, prix_event, id_user, background_img_event)
         VALUES('".$titre_post."','".$description_post."', '".$date_post."', '".$prix_post."', '".$id_user."', '".$path."')");
 		$req->execute();
-    
+
 }
 
 ?>

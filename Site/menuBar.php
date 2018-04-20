@@ -14,27 +14,7 @@ if(!empty($_SESSION['id_user']))
   <?php
 }
 
-if(!empty($_SESSION['id_user']))
-{
-if($_SESSION['role']!==3) {}
-   else{
-   ?>
-   <style type="text/css">#download_photo{
-   display: none;
-   }</style>
-   <?php
-   }
- }
 
- if(empty($_SESSION['id_user']))
- {
-    ?>
-    <style type="text/css">#download_photo{
-    display: none;
-    }</style>
-    <?php
-
-  }
 
 
 
@@ -59,7 +39,7 @@ if($_SESSION['role']!==3) {}
                               <li><a href="listEvenement.php">A venir</a></li>
                               <li><a href="listEvenementPasser.php">Passé</a></li>
                               <li><a href="ListIdee.php">Boite à idées</a></li>
-                              <li id="download_photo"><a href="listEvenement.php#eventlist_suggestion_section"><?php include("download_photo.php") ?></a></li>
+                            
                         </ul>
             </div>
             <div class="box" id="connexion_box"><a href="connexion.php"> Connexion </a></div>
