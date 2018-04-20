@@ -8,7 +8,10 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-session_start();
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
 $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
 
 $zip = new ZipArchive();
@@ -29,6 +32,6 @@ $zip = new ZipArchive();
 	 }
 	}
 	?>
-<a href="Image_site_BDE.zip" download="Image_site_BDE.zip">Télécharger toutes les images</a>
+<a href="Image_site_BDE.zip" download="Image_site_BDE.zip">Images</a>
 </body>
 </html>

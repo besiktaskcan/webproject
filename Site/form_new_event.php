@@ -90,7 +90,7 @@ $eventinfo = $sql->fetch();
     		$req = $bdd->prepare("INSERT INTO evenement(name, description, date_event, prix_event, id_user, background_img_event)
         VALUES('".$titre_post."','".$description_post."', '".$date_post."', '".$prix_post."', '".$id_user."', '".$path."')");
 		$req->execute();
-    header("Location: listEvenement.php"); 
+    
 }
 
 ?>

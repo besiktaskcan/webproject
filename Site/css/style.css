@@ -1,20 +1,22 @@
 
 
-html,body,footer
+html,body
 {
   margin: 0;
-  overflow-x: hidden;
+    overflow-x: hidden;
+
 }
 
 body
 {
 
-
   background-attachment: scroll;
   color: black;
   font-family:   Arial, serif;
   font-size: 24px;
-
+  position: relative;
+    min-height: 100vh;
+    padding-bottom: 136px; /* Should be equal to the height of your footer */
 
 }
 
@@ -34,6 +36,14 @@ h2
   font-size: 28px;
 }
 
+@media screen and (max-width: 900px) {
+
+  #title_text
+  {
+    display: none;
+  }
+}
+
 
 #s2_panier
 {
@@ -51,7 +61,10 @@ section
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-
+.noS
+{
+  box-shadow: none;
+}
 
 #s1
 {
@@ -163,7 +176,7 @@ section
 #s1_event
 {
   position: relative;
-  background-color: rgba(200, 10, 50, 1);
+
   overflow: hidden;
   background-image: url("../images/Red_background2.png");
   z-index: 1;
@@ -203,8 +216,6 @@ section
     margin-right: auto;
     width: 100%;
 
-
-
 }
 
 .eventHeader_box
@@ -212,8 +223,11 @@ section
   justify-content: center;
   display: inline-flex;
   margin: 10px;
+  border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+
 
 #eventHeader_title h2
 {
@@ -237,6 +251,10 @@ section
 {
   height: 350px;
   overflow-y: scroll;
+}
+
+#description::-webkit-scrollbar  {
+    display: none;
 }
 
 #eventHeader_gestion
@@ -308,6 +326,8 @@ section
   display: block;
 }
 
+
+
 .box_window
 {
   position: fixed;
@@ -338,7 +358,28 @@ section
 
 
 
+.non {
+    border-bottom: 1px solid #777777;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #333333;
+    border-top: 1px solid #000000;
+    color: #000000;
 
+    height: 18px;
+    padding: 1px;
+    font-size: 15px;
+    width: 35px;
+    text-decoration: none;
+}
+
+#propose_id_button
+{
+
+  color: black;
+  font-size: 20px;
+  height: 25px;
+  width: 50px;
+}
 
 
 
@@ -444,17 +485,22 @@ section
 
 }
 
+#s1_enventlist
+{
+  background-image: url("../images/Red_background.png");
+}
+
 #eventlist_section
 {
 
   margin-left: auto;
   margin-right: auto;
-    margin-top: 50px;
+  padding-top: 20px;
   width: 70%;
   text-align: center;
-  padding-top: 25px;
+
   padding-bottom: 30px;
-    background-color: rgba(200, 50, 50, 1);
+
 
 }
 
@@ -464,9 +510,13 @@ section
 border: 4px white solid;
 border-radius: 5px;
 background-color: rgba(60, 60, 60, 1);
-margin: 10px;
+
 box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
 }
+
+
+
+
 
 #eventlist_passer_container
 {
@@ -478,6 +528,8 @@ margin: 10px;
 box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
 }
 
+
+
 #eventlist_suggestion_container
 {
 
@@ -487,6 +539,8 @@ background-color: rgba(60, 60, 60, 1);
 margin: 10px;
 box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
 }
+
+
 
 #eventlist_section input[type="text"]
 {
@@ -512,6 +566,16 @@ box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.4),5px 6px 7px rgba(0, 0, 0, 0.4);
 }
 
 #Formul_boite_idee:target
+{
+  display: block;
+}
+
+#Formul_new_event
+{
+    display: none;
+}
+
+#Formul_new_event:target
 {
   display: block;
 }

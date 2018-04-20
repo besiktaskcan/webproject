@@ -27,7 +27,7 @@
         try {
             $bdd = new PDO('mysql:host=localhost;dbname=bde;charset=utf8', 'root', '');
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = $bdd->prepare("SELECT * FROM evenement WHERE date_event > CURRENT_DATE") ;
+            $sql = $bdd->prepare("SELECT * FROM evenement WHERE date_event < CURRENT_DATE") ;
             $sql->execute();
 
             if(!empty($_SESSION['id_user']))
@@ -56,56 +56,50 @@
               }
             }
 
-            if(isset($_POST['creat_event']))
-            {
-              header("Location: form_new_event.php?id=".$_POST['postid_suggestion']);
-            }
-
-
 
 
             ?>
             <div id="eventlist_section">
 
-              <h2 style="color: white;">Prochains événements</h2>
 
-            <?php        // On affiche chaque entrée une à une
-              while ($eventinfo = $sql->fetch())
-              {
-              ?>
-                  <div id="eventlist_prochain_container">
 
-                      <div class="eventinfo">
-                        Événement n°<?php echo $eventinfo['id_event']; ?>
-                      </div>
-                      <br/>
-                      <div class="eventinfo" id="name_event">
-                        <?php echo $eventinfo['name']; ?>
-                      </div>
-                      <br/>
-                      <div class="eventinfo" id="description_event">
-                      <?php echo $eventinfo['description']; ?>
-                      </div>
-                      <br/>
-                      <div class="eventinfo" id="date_event">
-                      <?php echo $eventinfo['date_event']; ?>
-                      </div>
-                      <div class="eventinfo" id="prix_event">
-                      <?php echo $eventinfo['prix_event'];?>€
-                      </div>
-                      <br/>
-                      <form method="post" action="" autocomplete="on">
-                      <?php echo '<input name="postid_event" type="text" value='. $eventinfo["id_event"].' />'; ?>
-                      <input type="submit" name="voir_info_event" value="Voir les information">
-                      </form>
-                 </div>
-              <?php
-              }
-              $sql->closeCursor(); // Termine le traitement de la requête
-              $sql = $bdd->prepare("SELECT * FROM evenement WHERE date_event < CURRENT_DATE") ;
-              $sql->execute();
+                <h2 id="eventlist_passer_title" style="color: white;">Événements passés</h2>
+              <?php        // On affiche chaque entrée une à une
+                while ($eventinfo = $sql->fetch())
+                {
+                ?>
+                    <div id="eventlist_passer_container">
 
-              ?>
+                        <div class="eventinfo">
+                          Événement n°<?php echo $eventinfo['id_event']; ?>
+                        </div>
+                        <br/>
+                        <div class="eventinfo" id="name_event">
+                          <?php echo $eventinfo['name']; ?>
+                        </div>
+                        <br/>
+                        <div class="eventinfo" id="description_event">
+                        <?php echo $eventinfo['description']; ?>
+                        </div>
+                        <br/>
+                        <div class="eventinfo" id="date_event">
+                        <?php echo $eventinfo['date_event']; ?>
+                        </div>
+                        <div class="eventinfo" id="prix_event">
+                        <?php echo $eventinfo['prix_event'];?>€
+                        </div>
+                        <br/>
+                        <form method="post" action="" autocomplete="on">
+                        <?php echo '<input name="postid_event" type="text" value='. $eventinfo["id_event"].' />'; ?>
+                        <input type="submit" name="voir_info_event" value="Voir les information">
+                        </form>
+                   </div>
+
+                   <?php
+                   }
+                   $sql->closeCursor(); // Termine le traitement de la requête
+                   ?>
+
 
               </div>
 

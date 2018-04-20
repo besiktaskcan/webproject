@@ -1,18 +1,4 @@
-<style type="text/css">
-.non {
-    border-bottom: 1px solid #777777;
-    border-left: 1px solid #000000;
-    border-right: 1px solid #333333;
-    border-top: 1px solid #000000;
-    color: #000000;
 
-    height: 18px;
-    padding: 1px;
-    font-size: 15px;
-    width: 35px;
-    text-decoration: none;
-}
-</style>
 
 <div class="">
 

@@ -22,7 +22,7 @@ try {
             $_SESSION['firstname'] = $userinfo['firstname'];
             $_SESSION['mail'] = $userinfo['mail'];
             $_SESSION['role'] = $userinfo['role'];
-            header("Location: listEvenement.php?id=".$_SESSION['id_user']); 
+            header("Location: listEvenement.php?id=".$_SESSION['id_user']);
           //  header("Location: boite_id.php");
 
             //echo "vous êtes connectés!";
@@ -48,14 +48,18 @@ try {
 
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>" />
-        <link rel="stylesheet" type="text/css" href="css/styleConnexion.css?<?php echo time(); ?>" />
-        <link rel="stylesheet" type="text/css" href="css/animate-custom.css?<?php echo time(); ?>" />
-        <link rel="stylesheet" media="(orientation:landscape)" href="css/style-menuBar.css?<?php echo time(); ?>">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell?<?php echo time(); ?>" />
+        <link rel="stylesheet" media="(orientation:portrait)" href="css/style.css?<?php echo time(); ?>">
+        <link rel="stylesheet" media="(orientation:landscape)" href="css/style.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-menuBar.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-slideShow.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-footer.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-footer.css?<?php echo time(); ?>">
+          <link rel="stylesheet"  href="css/styleConnexion.css?<?php echo time(); ?>">
         <title>Connexion</title>
     </head>
 
-    <body>
+    <body id="s1_enventlist">
 
     <!-- L'en-tête -->
     <header>
@@ -110,5 +114,9 @@ try {
     </div>
 
     </body>
+
+    <footer>
+      <?php include("footer.php");?>
+    </footer>
 
 </html>

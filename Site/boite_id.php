@@ -5,7 +5,7 @@
 </head>
 <body>
     <form method="post" action="">
-      <a href="#" class="deleteMeetingClose">&times;</a>
+      <a href="#eventlist_suggestion_section" class="deleteMeetingClose">&times;</a>
       <br/>
     <p>
         Entrez un titre : </br>

@@ -16,9 +16,9 @@ $q = htmlspecialchars($_GET["id"]);
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell?<?php echo time(); ?>" />
         <link rel="stylesheet" media="(orientation:portrait)" href="css/style2.css?<?php echo time(); ?>">
         <link rel="stylesheet" media="(orientation:landscape)" href="css/style.css?<?php echo time(); ?>">
-        <link rel="stylesheet" media="(orientation:landscape)" href="css/style-menuBar.css?<?php echo time(); ?>">
-        <link rel="stylesheet" media="(orientation:landscape)" href="css/style-slideShowevents.css?<?php echo time(); ?>">
-        <link rel="stylesheet" media="(orientation:landscape)" href="css/style-footer.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-menuBar.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-slideShow.css?<?php echo time(); ?>">
+        <link rel="stylesheet"  href="css/style-footer.css?<?php echo time(); ?>">
 
         <title>BDE EXIA CESI ST</title>
         <?php
